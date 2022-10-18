@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="imageModel"
+            type="com.example.notesapp.models.ImageModel" />
+        <variable
+            name="itemPostion"
+            type="int" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/noteImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize5Percent"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic"
+            app:imageUri="@{imageModel.imageUri}"/>
+
+        <EditText
+            android:id="@+id/etNoteImageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:fontFamily="@font/google_sans_regular"
+            android:inputType="none"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:text="@{imageModel.text}"
+            />
+
+    </LinearLayout>
+</layout>
